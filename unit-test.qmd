@@ -8,6 +8,8 @@ editor: visual
 
 ```{r}
 library(testthat)
+library(here)
+library(palmerpenguins)
 ```
 
 ```{r}
@@ -32,6 +34,18 @@ expect_true(mean_range(mtcars)[1] >= mean_range(mtcars)[2])
 expect_type(mean_range(mtcars), "double")
 ```
 
-```{r}
+### Source a script
 
+```{r}
+source(here::here("src", "food_cart_function.R"))
+
+name_cart(food = "lasagna", animal = "giraffe")
+```
+
+```{r}
+source(here::here("src", "cork_oak_growth.R"))
+
+height_t2(height_t1 = 11, t1 = 3, t2 = 8)
+tree_ages <- seq(from = 4, to = 50, by = 1)
+height_t2(height_t1 = 11, t1 = 3, t2 = tree_ages)
 ```
